@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { useState } from "react";
 import {
 	ActivityIndicator,
@@ -7,6 +8,7 @@ import {
 	Platform,
 	Pressable,
 	StyleSheet,
+	Switch,
 	Text,
 	TouchableOpacity,
 	View,
@@ -16,6 +18,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Home() {
 	const [isHidden, setIsHidden] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
+	const [switchToggle, setSwitchToggle] = useState(false);
+
 	const imgUri =
 		"https://kalokaradiananda.my.id/api/image/kaloka-radia-nanda.png";
 
@@ -93,6 +97,11 @@ export default function Home() {
 			>
 				<Text style={styles.textStyle}>Show Modal</Text>
 			</Pressable>
+
+			{/* Switch */}
+			<Switch value={switchToggle} onValueChange={setSwitchToggle} />
+
+			<Link href="/status-bar">Go to Status Bar</Link>
 		</SafeAreaView>
 	);
 }
