@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import {
 	Button,
@@ -81,6 +82,9 @@ const App = () => {
 							onPress={changeStatusBarTransition}
 						/>
 					) : null}
+				</View>
+				<View>
+					<Link href="/">Back to Home</Link>
 				</View>
 			</SafeAreaView>
 		</SafeAreaProvider>

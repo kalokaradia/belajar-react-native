@@ -19,6 +19,7 @@ export default function Home() {
 	const [isHidden, setIsHidden] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [switchToggle, setSwitchToggle] = useState(false);
+	const [count, setCount] = useState(0);
 
 	const imgUri =
 		"https://kalokaradiananda.my.id/api/image/kaloka-radia-nanda.png";
@@ -98,10 +99,19 @@ export default function Home() {
 				<Text style={styles.textStyle}>Show Modal</Text>
 			</Pressable>
 
+			{/* Text Input */}
+			<Link href="/input">Go to input</Link>
+
 			{/* Switch */}
 			<Switch value={switchToggle} onValueChange={setSwitchToggle} />
 
+			{/* Status Bar */}
 			<Link href="/status-bar">Go to Status Bar</Link>
+
+			{/* Pressable */}
+			<Pressable onPress={() => setCount((curr) => curr + 1)}>
+				<Text>Count: {count}</Text>
+			</Pressable>
 		</SafeAreaView>
 	);
 }
